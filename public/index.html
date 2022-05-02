@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      .btn {
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="btn" onclick="sendKey('space')">Voltar</button>
+    <button class="btn" onclick="sendKey('space')">Parar</button>
+    <button class="btn" onclick="sendKey('space')">Adiantar</button>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+  <script>
+    function sendKey(key) {
+      axios.post(
+        'http://localhost:3300/sendkey',
+        { key },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+    }
+  </script>
+</html>
